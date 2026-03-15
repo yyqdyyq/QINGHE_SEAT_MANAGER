@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply antialiased;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 font-sans;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(148 163 184) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(148 163 184);
+  border-radius: 9999px;
+}
+
+.drawer-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.drawer-enter-active {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: transform 200ms ease-out, opacity 200ms ease-out;
+}
+
+.drawer-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.drawer-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 200ms ease-in, opacity 200ms ease-in;
+}
