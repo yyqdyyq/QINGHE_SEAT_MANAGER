@@ -180,7 +180,11 @@ const App: React.FC = () => {
             onPlanChange={setPlanFilter}
           />
 
-          <SeatGrid seats={filteredSeats} onSelectSeat={handleSelectSeat} />
+          <SeatGrid
+            seats={filteredSeats}
+            allSeats={seats}
+            onSelectSeat={handleSelectSeat}
+          />
         </div>
 
         {drawerOpen && (
