@@ -29,7 +29,7 @@ const SeatDetailDrawer: React.FC<SeatDetailDrawerProps> = ({
   const planText = seat.planType ? PLAN_TYPE_LABEL[seat.planType] : "--";
 
   return (
-    <aside className="fixed inset-y-0 right-0 z-30 w-full max-w-sm border-l border-border bg-surface shadow-modal">
+    <aside className="fixed inset-y-0 right-0 z-30 w-full max-w-[320px] border-l border-border bg-surface shadow-modal sm:max-w-[360px]">
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between border-b border-border px-5 py-4">
           <div>
