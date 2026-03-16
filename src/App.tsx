@@ -186,16 +186,31 @@ const App: React.FC = () => {
             onSelectSeat={handleSelectSeat}
           />
         </div>
+
+        {drawerOpen && (
+          <div className="hidden shrink-0 lg:block lg:w-96">
+            <SeatDetailDrawer
+              seat={selectedSeat}
+              open={drawerOpen}
+              onClose={handleCloseDrawer}
+              onCheckIn={handleCheckInFromDrawer}
+              onEndUsage={handleEndUsage}
+              onEdit={handleEditFromDrawer}
+            />
+          </div>
+        )}
       </main>
 
-      <SeatDetailDrawer
-        seat={selectedSeat}
-        open={drawerOpen}
-        onClose={handleCloseDrawer}
-        onCheckIn={handleCheckInFromDrawer}
-        onEndUsage={handleEndUsage}
-        onEdit={handleEditFromDrawer}
-      />
+      <div className="lg:hidden">
+        <SeatDetailDrawer
+          seat={selectedSeat}
+          open={drawerOpen}
+          onClose={handleCloseDrawer}
+          onCheckIn={handleCheckInFromDrawer}
+          onEndUsage={handleEndUsage}
+          onEdit={handleEditFromDrawer}
+        />
+      </div>
 
       <CheckInModal
         open={isCheckInModalOpen}
